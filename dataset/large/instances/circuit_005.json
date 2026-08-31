@@ -1,0 +1,128 @@
+{
+  "id": "circuit_005",
+  "name": "BANDGAP_CORE",
+  "description": "Bandgap reference core: PMOS mirrors + NMOS with resistors",
+  "grid": {
+    "rows": 3,
+    "cols": 4
+  },
+  "transistors": [
+    {
+      "id": "MP1",
+      "type": "pmos",
+      "role": "mirror_pmos",
+      "nets": {
+        "gate": "VBP",
+        "drain": "X1",
+        "source": "VDD",
+        "bulk": "VDD"
+      }
+    },
+    {
+      "id": "MP2",
+      "type": "pmos",
+      "role": "mirror_pmos",
+      "nets": {
+        "gate": "VBP",
+        "drain": "X2",
+        "source": "VDD",
+        "bulk": "VDD"
+      }
+    },
+    {
+      "id": "MP3",
+      "type": "pmos",
+      "role": "mirror_pmos",
+      "nets": {
+        "gate": "VBP",
+        "drain": "VREF",
+        "source": "VDD",
+        "bulk": "VDD"
+      }
+    },
+    {
+      "id": "MN1",
+      "type": "nmos",
+      "role": "bias_nmos",
+      "nets": {
+        "gate": "VBN",
+        "drain": "X1",
+        "source": "GND",
+        "bulk": "GND"
+      }
+    },
+    {
+      "id": "MN2",
+      "type": "nmos",
+      "role": "bias_nmos",
+      "nets": {
+        "gate": "VBN",
+        "drain": "X2",
+        "source": "GND",
+        "bulk": "GND"
+      }
+    },
+    {
+      "id": "MAMP",
+      "type": "pmos",
+      "role": "tail_pmos",
+      "nets": {
+        "gate": "X1",
+        "drain": "VBP",
+        "source": "VDD",
+        "bulk": "VDD"
+      }
+    }
+  ],
+  "sizing_constraints": {
+    "match_groups": [
+      [
+        "MP1",
+        "MP2",
+        "MP3"
+      ],
+      [
+        "MN1",
+        "MN2"
+      ]
+    ],
+    "bounds": {
+      "MP1": {
+        "W_min": 0.84,
+        "W_max": 4.2,
+        "L_min": 0.35,
+        "L_max": 1.0
+      },
+      "MP2": {
+        "W_min": 0.84,
+        "W_max": 4.2,
+        "L_min": 0.35,
+        "L_max": 1.0
+      },
+      "MP3": {
+        "W_min": 0.84,
+        "W_max": 4.2,
+        "L_min": 0.35,
+        "L_max": 1.0
+      },
+      "MN1": {
+        "W_min": 0.84,
+        "W_max": 2.1,
+        "L_min": 0.35,
+        "L_max": 1.0
+      },
+      "MN2": {
+        "W_min": 0.84,
+        "W_max": 2.1,
+        "L_min": 0.35,
+        "L_max": 1.0
+      },
+      "MAMP": {
+        "W_min": 1.26,
+        "W_max": 4.2,
+        "L_min": 0.35,
+        "L_max": 1.0
+      }
+    }
+  }
+}

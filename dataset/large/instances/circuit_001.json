@@ -1,0 +1,110 @@
+{
+  "id": "circuit_001",
+  "name": "OTA_5T",
+  "description": "5-transistor OTA: diff pair + PMOS load mirror + tail",
+  "grid": {
+    "rows": 3,
+    "cols": 4
+  },
+  "transistors": [
+    {
+      "id": "M1",
+      "type": "nmos",
+      "role": "diff_pair_nmos",
+      "nets": {
+        "gate": "INP",
+        "drain": "OUTP",
+        "source": "TAIL",
+        "bulk": "GND"
+      }
+    },
+    {
+      "id": "M2",
+      "type": "nmos",
+      "role": "diff_pair_nmos",
+      "nets": {
+        "gate": "INN",
+        "drain": "OUTN",
+        "source": "TAIL",
+        "bulk": "GND"
+      }
+    },
+    {
+      "id": "M3",
+      "type": "pmos",
+      "role": "load_pmos",
+      "nets": {
+        "gate": "OUTP",
+        "drain": "OUTP",
+        "source": "VDD",
+        "bulk": "VDD"
+      }
+    },
+    {
+      "id": "M4",
+      "type": "pmos",
+      "role": "load_pmos",
+      "nets": {
+        "gate": "OUTP",
+        "drain": "OUTN",
+        "source": "VDD",
+        "bulk": "VDD"
+      }
+    },
+    {
+      "id": "MTAIL",
+      "type": "nmos",
+      "role": "tail_nmos",
+      "nets": {
+        "gate": "VBIAS",
+        "drain": "TAIL",
+        "source": "GND",
+        "bulk": "GND"
+      }
+    }
+  ],
+  "sizing_constraints": {
+    "match_groups": [
+      [
+        "M1",
+        "M2"
+      ],
+      [
+        "M3",
+        "M4"
+      ]
+    ],
+    "bounds": {
+      "M1": {
+        "W_min": 1.26,
+        "W_max": 4.2,
+        "L_min": 0.35,
+        "L_max": 1.0
+      },
+      "M2": {
+        "W_min": 1.26,
+        "W_max": 4.2,
+        "L_min": 0.35,
+        "L_max": 1.0
+      },
+      "M3": {
+        "W_min": 0.84,
+        "W_max": 4.2,
+        "L_min": 0.35,
+        "L_max": 1.0
+      },
+      "M4": {
+        "W_min": 0.84,
+        "W_max": 4.2,
+        "L_min": 0.35,
+        "L_max": 1.0
+      },
+      "MTAIL": {
+        "W_min": 2.1,
+        "W_max": 4.2,
+        "L_min": 0.35,
+        "L_max": 1.0
+      }
+    }
+  }
+}

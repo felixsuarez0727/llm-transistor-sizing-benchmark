@@ -1,0 +1,129 @@
+{
+  "id": "circuit_020",
+  "name": "TRANSLINEAR_LOOP",
+  "description": "Translinear loop: 4 NMOS + 2 PMOS bias for exponential I-V",
+  "grid": {
+    "rows": 3,
+    "cols": 4
+  },
+  "transistors": [
+    {
+      "id": "M1",
+      "type": "nmos",
+      "role": "mirror_nmos",
+      "nets": {
+        "gate": "VA",
+        "drain": "VA",
+        "source": "GND",
+        "bulk": "GND"
+      }
+    },
+    {
+      "id": "M2",
+      "type": "nmos",
+      "role": "mirror_nmos",
+      "nets": {
+        "gate": "VB",
+        "drain": "VA",
+        "source": "X1",
+        "bulk": "GND"
+      }
+    },
+    {
+      "id": "M3",
+      "type": "nmos",
+      "role": "mirror_nmos",
+      "nets": {
+        "gate": "VC",
+        "drain": "VB",
+        "source": "X1",
+        "bulk": "GND"
+      }
+    },
+    {
+      "id": "M4",
+      "type": "nmos",
+      "role": "mirror_nmos",
+      "nets": {
+        "gate": "VD",
+        "drain": "VB",
+        "source": "GND",
+        "bulk": "GND"
+      }
+    },
+    {
+      "id": "MP1",
+      "type": "pmos",
+      "role": "load_pmos",
+      "nets": {
+        "gate": "VBP",
+        "drain": "VA",
+        "source": "VDD",
+        "bulk": "VDD"
+      }
+    },
+    {
+      "id": "MP2",
+      "type": "pmos",
+      "role": "load_pmos",
+      "nets": {
+        "gate": "VBP",
+        "drain": "VB",
+        "source": "VDD",
+        "bulk": "VDD"
+      }
+    }
+  ],
+  "sizing_constraints": {
+    "match_groups": [
+      [
+        "M1",
+        "M2",
+        "M3",
+        "M4"
+      ],
+      [
+        "MP1",
+        "MP2"
+      ]
+    ],
+    "bounds": {
+      "M1": {
+        "W_min": 0.84,
+        "W_max": 2.1,
+        "L_min": 0.35,
+        "L_max": 1.0
+      },
+      "M2": {
+        "W_min": 0.84,
+        "W_max": 2.1,
+        "L_min": 0.35,
+        "L_max": 1.0
+      },
+      "M3": {
+        "W_min": 0.84,
+        "W_max": 2.1,
+        "L_min": 0.35,
+        "L_max": 1.0
+      },
+      "M4": {
+        "W_min": 0.84,
+        "W_max": 2.1,
+        "L_min": 0.35,
+        "L_max": 1.0
+      },
+      "MP1": {
+        "W_min": 0.84,
+        "W_max": 2.1,
+        "L_min": 0.35,
+        "L_max": 1.0
+      },
+      "MP2": {
+        "W_min": 0.84,
+        "W_max": 2.1,
+        "L_min": 0.35,
+        "L_max": 1.0
+      }
+    }
+  }
+}

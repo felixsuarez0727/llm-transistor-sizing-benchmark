@@ -1,0 +1,93 @@
+{
+  "id": "circuit_013",
+  "name": "BIAS_GEN",
+  "description": "Self-biased current reference: diode+mirror pair",
+  "grid": {
+    "rows": 2,
+    "cols": 3
+  },
+  "transistors": [
+    {
+      "id": "MN1",
+      "type": "nmos",
+      "role": "mirror_nmos",
+      "nets": {
+        "gate": "VBIAS",
+        "drain": "VBIAS",
+        "source": "GND",
+        "bulk": "GND"
+      }
+    },
+    {
+      "id": "MN2",
+      "type": "nmos",
+      "role": "mirror_nmos",
+      "nets": {
+        "gate": "VBIAS",
+        "drain": "OUT",
+        "source": "GND",
+        "bulk": "GND"
+      }
+    },
+    {
+      "id": "MP1",
+      "type": "pmos",
+      "role": "mirror_pmos",
+      "nets": {
+        "gate": "VBP",
+        "drain": "VBIAS",
+        "source": "VDD",
+        "bulk": "VDD"
+      }
+    },
+    {
+      "id": "MP2",
+      "type": "pmos",
+      "role": "mirror_pmos",
+      "nets": {
+        "gate": "VBP",
+        "drain": "OUT",
+        "source": "VDD",
+        "bulk": "VDD"
+      }
+    }
+  ],
+  "sizing_constraints": {
+    "match_groups": [
+      [
+        "MN1",
+        "MN2"
+      ],
+      [
+        "MP1",
+        "MP2"
+      ]
+    ],
+    "bounds": {
+      "MN1": {
+        "W_min": 0.84,
+        "W_max": 4.2,
+        "L_min": 0.35,
+        "L_max": 1.0
+      },
+      "MN2": {
+        "W_min": 0.84,
+        "W_max": 4.2,
+        "L_min": 0.35,
+        "L_max": 1.0
+      },
+      "MP1": {
+        "W_min": 0.84,
+        "W_max": 4.2,
+        "L_min": 0.35,
+        "L_max": 1.0
+      },
+      "MP2": {
+        "W_min": 0.84,
+        "W_max": 4.2,
+        "L_min": 0.35,
+        "L_max": 1.0
+      }
+    }
+  }
+}

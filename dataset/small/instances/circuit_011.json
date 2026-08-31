@@ -1,0 +1,55 @@
+{
+  "id": "circuit_011",
+  "name": "PASS_GATE",
+  "description": "Transmission gate: complementary PMOS+NMOS in parallel",
+  "grid": {
+    "rows": 2,
+    "cols": 3
+  },
+  "transistors": [
+    {
+      "id": "MN",
+      "type": "nmos",
+      "role": "logic_nmos",
+      "nets": {
+        "gate": "EN",
+        "drain": "B",
+        "source": "A",
+        "bulk": "GND"
+      }
+    },
+    {
+      "id": "MP",
+      "type": "pmos",
+      "role": "logic_pmos",
+      "nets": {
+        "gate": "ENB",
+        "drain": "B",
+        "source": "A",
+        "bulk": "VDD"
+      }
+    }
+  ],
+  "sizing_constraints": {
+    "match_groups": [
+      [
+        "MN",
+        "MP"
+      ]
+    ],
+    "bounds": {
+      "MN": {
+        "W_min": 0.42,
+        "W_max": 2.1,
+        "L_min": 0.15,
+        "L_max": 0.35
+      },
+      "MP": {
+        "W_min": 0.42,
+        "W_max": 2.1,
+        "L_min": 0.15,
+        "L_max": 0.35
+      }
+    }
+  }
+}

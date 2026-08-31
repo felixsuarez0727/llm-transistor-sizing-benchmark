@@ -1,0 +1,148 @@
+{
+  "id": "circuit_009",
+  "name": "GAIN_BOOST_AMP",
+  "description": "Gain-boosted OTA: main diff pair + auxiliary amp for cascode boost",
+  "grid": {
+    "rows": 3,
+    "cols": 4
+  },
+  "transistors": [
+    {
+      "id": "M1",
+      "type": "nmos",
+      "role": "diff_pair_nmos",
+      "nets": {
+        "gate": "INP",
+        "drain": "X1",
+        "source": "TAIL",
+        "bulk": "GND"
+      }
+    },
+    {
+      "id": "M2",
+      "type": "nmos",
+      "role": "diff_pair_nmos",
+      "nets": {
+        "gate": "INN",
+        "drain": "X2",
+        "source": "TAIL",
+        "bulk": "GND"
+      }
+    },
+    {
+      "id": "MB",
+      "type": "nmos",
+      "role": "tail_nmos",
+      "nets": {
+        "gate": "VBN",
+        "drain": "TAIL",
+        "source": "GND",
+        "bulk": "GND"
+      }
+    },
+    {
+      "id": "MPC1",
+      "type": "pmos",
+      "role": "bias_pmos",
+      "nets": {
+        "gate": "VAUX1",
+        "drain": "OUT",
+        "source": "Y1",
+        "bulk": "VDD"
+      }
+    },
+    {
+      "id": "MPC2",
+      "type": "pmos",
+      "role": "bias_pmos",
+      "nets": {
+        "gate": "VAUX2",
+        "drain": "X3",
+        "source": "Y2",
+        "bulk": "VDD"
+      }
+    },
+    {
+      "id": "MPL1",
+      "type": "pmos",
+      "role": "load_pmos",
+      "nets": {
+        "gate": "VBP",
+        "drain": "Y1",
+        "source": "VDD",
+        "bulk": "VDD"
+      }
+    },
+    {
+      "id": "MPL2",
+      "type": "pmos",
+      "role": "load_pmos",
+      "nets": {
+        "gate": "VBP",
+        "drain": "Y2",
+        "source": "VDD",
+        "bulk": "VDD"
+      }
+    }
+  ],
+  "sizing_constraints": {
+    "match_groups": [
+      [
+        "M1",
+        "M2"
+      ],
+      [
+        "MPC1",
+        "MPC2"
+      ],
+      [
+        "MPL1",
+        "MPL2"
+      ]
+    ],
+    "bounds": {
+      "M1": {
+        "W_min": 1.26,
+        "W_max": 4.2,
+        "L_min": 0.35,
+        "L_max": 1.0
+      },
+      "M2": {
+        "W_min": 1.26,
+        "W_max": 4.2,
+        "L_min": 0.35,
+        "L_max": 1.0
+      },
+      "MB": {
+        "W_min": 2.1,
+        "W_max": 4.2,
+        "L_min": 0.35,
+        "L_max": 1.0
+      },
+      "MPC1": {
+        "W_min": 0.84,
+        "W_max": 2.1,
+        "L_min": 0.35,
+        "L_max": 1.0
+      },
+      "MPC2": {
+        "W_min": 0.84,
+        "W_max": 2.1,
+        "L_min": 0.35,
+        "L_max": 1.0
+      },
+      "MPL1": {
+        "W_min": 0.84,
+        "W_max": 4.2,
+        "L_min": 0.35,
+        "L_max": 1.0
+      },
+      "MPL2": {
+        "W_min": 0.84,
+        "W_max": 4.2,
+        "L_min": 0.35,
+        "L_max": 1.0
+      }
+    }
+  }
+}

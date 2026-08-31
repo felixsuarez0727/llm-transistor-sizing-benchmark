@@ -1,0 +1,55 @@
+{
+  "id": "circuit_004",
+  "name": "MIRROR_P",
+  "description": "PMOS current mirror: diode-connected reference + output",
+  "grid": {
+    "rows": 2,
+    "cols": 3
+  },
+  "transistors": [
+    {
+      "id": "MREF",
+      "type": "pmos",
+      "role": "mirror_pmos",
+      "nets": {
+        "gate": "BIAS",
+        "drain": "BIAS",
+        "source": "VDD",
+        "bulk": "VDD"
+      }
+    },
+    {
+      "id": "MOUT",
+      "type": "pmos",
+      "role": "mirror_pmos",
+      "nets": {
+        "gate": "BIAS",
+        "drain": "OUT",
+        "source": "VDD",
+        "bulk": "VDD"
+      }
+    }
+  ],
+  "sizing_constraints": {
+    "match_groups": [
+      [
+        "MREF",
+        "MOUT"
+      ]
+    ],
+    "bounds": {
+      "MREF": {
+        "W_min": 0.84,
+        "W_max": 4.2,
+        "L_min": 0.35,
+        "L_max": 1.0
+      },
+      "MOUT": {
+        "W_min": 0.84,
+        "W_max": 4.2,
+        "L_min": 0.35,
+        "L_max": 1.0
+      }
+    }
+  }
+}

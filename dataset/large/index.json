@@ -1,0 +1,262 @@
+[
+  {
+    "id": "circuit_001",
+    "name": "OTA_5T",
+    "instance_path": "/Users/jaime07ag/llm-transistor-sizing/dataset/large/instances/circuit_001.json",
+    "solution_path": "/Users/jaime07ag/llm-transistor-sizing/dataset/large/solutions/circuit_001_solution.json",
+    "grid": {
+      "rows": 3,
+      "cols": 4
+    },
+    "n_transistors": 5,
+    "ref_hpwl": 8.0,
+    "ref_cost": 1.6
+  },
+  {
+    "id": "circuit_002",
+    "name": "TWO_STAGE_AMP",
+    "instance_path": "/Users/jaime07ag/llm-transistor-sizing/dataset/large/instances/circuit_002.json",
+    "solution_path": "/Users/jaime07ag/llm-transistor-sizing/dataset/large/solutions/circuit_002_solution.json",
+    "grid": {
+      "rows": 3,
+      "cols": 4
+    },
+    "n_transistors": 7,
+    "ref_hpwl": 13.0,
+    "ref_cost": 2.6
+  },
+  {
+    "id": "circuit_003",
+    "name": "FOLDED_CASCODE_OTA",
+    "instance_path": "/Users/jaime07ag/llm-transistor-sizing/dataset/large/instances/circuit_003.json",
+    "solution_path": "/Users/jaime07ag/llm-transistor-sizing/dataset/large/solutions/circuit_003_solution.json",
+    "grid": {
+      "rows": 3,
+      "cols": 4
+    },
+    "n_transistors": 7,
+    "ref_hpwl": 12.0,
+    "ref_cost": 2.4
+  },
+  {
+    "id": "circuit_004",
+    "name": "COMPARATOR",
+    "instance_path": "/Users/jaime07ag/llm-transistor-sizing/dataset/large/instances/circuit_004.json",
+    "solution_path": "/Users/jaime07ag/llm-transistor-sizing/dataset/large/solutions/circuit_004_solution.json",
+    "grid": {
+      "rows": 3,
+      "cols": 4
+    },
+    "n_transistors": 7,
+    "ref_hpwl": 12.0,
+    "ref_cost": 2.4
+  },
+  {
+    "id": "circuit_005",
+    "name": "BANDGAP_CORE",
+    "instance_path": "/Users/jaime07ag/llm-transistor-sizing/dataset/large/instances/circuit_005.json",
+    "solution_path": "/Users/jaime07ag/llm-transistor-sizing/dataset/large/solutions/circuit_005_solution.json",
+    "grid": {
+      "rows": 3,
+      "cols": 4
+    },
+    "n_transistors": 6,
+    "ref_hpwl": 9.0,
+    "ref_cost": 1.8
+  },
+  {
+    "id": "circuit_006",
+    "name": "RECYCLING_FC",
+    "instance_path": "/Users/jaime07ag/llm-transistor-sizing/dataset/large/instances/circuit_006.json",
+    "solution_path": "/Users/jaime07ag/llm-transistor-sizing/dataset/large/solutions/circuit_006_solution.json",
+    "grid": {
+      "rows": 3,
+      "cols": 4
+    },
+    "n_transistors": 7,
+    "ref_hpwl": 11.0,
+    "ref_cost": 2.2
+  },
+  {
+    "id": "circuit_007",
+    "name": "TELESCOPIC_OTA",
+    "instance_path": "/Users/jaime07ag/llm-transistor-sizing/dataset/large/instances/circuit_007.json",
+    "solution_path": "/Users/jaime07ag/llm-transistor-sizing/dataset/large/solutions/circuit_007_solution.json",
+    "grid": {
+      "rows": 3,
+      "cols": 4
+    },
+    "n_transistors": 9,
+    "ref_hpwl": 18.0,
+    "ref_cost": 3.6
+  },
+  {
+    "id": "circuit_008",
+    "name": "DIFF_AMP_LOAD",
+    "instance_path": "/Users/jaime07ag/llm-transistor-sizing/dataset/large/instances/circuit_008.json",
+    "solution_path": "/Users/jaime07ag/llm-transistor-sizing/dataset/large/solutions/circuit_008_solution.json",
+    "grid": {
+      "rows": 3,
+      "cols": 4
+    },
+    "n_transistors": 6,
+    "ref_hpwl": 9.0,
+    "ref_cost": 1.8
+  },
+  {
+    "id": "circuit_009",
+    "name": "GAIN_BOOST_AMP",
+    "instance_path": "/Users/jaime07ag/llm-transistor-sizing/dataset/large/instances/circuit_009.json",
+    "solution_path": "/Users/jaime07ag/llm-transistor-sizing/dataset/large/solutions/circuit_009_solution.json",
+    "grid": {
+      "rows": 3,
+      "cols": 4
+    },
+    "n_transistors": 7,
+    "ref_hpwl": 9.0,
+    "ref_cost": 1.8
+  },
+  {
+    "id": "circuit_010",
+    "name": "RING_VCO",
+    "instance_path": "/Users/jaime07ag/llm-transistor-sizing/dataset/large/instances/circuit_010.json",
+    "solution_path": "/Users/jaime07ag/llm-transistor-sizing/dataset/large/solutions/circuit_010_solution.json",
+    "grid": {
+      "rows": 3,
+      "cols": 4
+    },
+    "n_transistors": 7,
+    "ref_hpwl": 12.0,
+    "ref_cost": 2.4
+  },
+  {
+    "id": "circuit_011",
+    "name": "SUPER_MIRROR",
+    "instance_path": "/Users/jaime07ag/llm-transistor-sizing/dataset/large/instances/circuit_011.json",
+    "solution_path": "/Users/jaime07ag/llm-transistor-sizing/dataset/large/solutions/circuit_011_solution.json",
+    "grid": {
+      "rows": 3,
+      "cols": 4
+    },
+    "n_transistors": 6,
+    "ref_hpwl": 9.0,
+    "ref_cost": 1.8
+  },
+  {
+    "id": "circuit_012",
+    "name": "CMFB_AMP",
+    "instance_path": "/Users/jaime07ag/llm-transistor-sizing/dataset/large/instances/circuit_012.json",
+    "solution_path": "/Users/jaime07ag/llm-transistor-sizing/dataset/large/solutions/circuit_012_solution.json",
+    "grid": {
+      "rows": 3,
+      "cols": 4
+    },
+    "n_transistors": 6,
+    "ref_hpwl": 7.0,
+    "ref_cost": 1.4
+  },
+  {
+    "id": "circuit_013",
+    "name": "CHARGE_PUMP",
+    "instance_path": "/Users/jaime07ag/llm-transistor-sizing/dataset/large/instances/circuit_013.json",
+    "solution_path": "/Users/jaime07ag/llm-transistor-sizing/dataset/large/solutions/circuit_013_solution.json",
+    "grid": {
+      "rows": 3,
+      "cols": 4
+    },
+    "n_transistors": 6,
+    "ref_hpwl": 9.0,
+    "ref_cost": 1.8
+  },
+  {
+    "id": "circuit_014",
+    "name": "LDO_CORE",
+    "instance_path": "/Users/jaime07ag/llm-transistor-sizing/dataset/large/instances/circuit_014.json",
+    "solution_path": "/Users/jaime07ag/llm-transistor-sizing/dataset/large/solutions/circuit_014_solution.json",
+    "grid": {
+      "rows": 3,
+      "cols": 4
+    },
+    "n_transistors": 6,
+    "ref_hpwl": 9.0,
+    "ref_cost": 1.8
+  },
+  {
+    "id": "circuit_015",
+    "name": "DIFF_PAIR_CASCODE",
+    "instance_path": "/Users/jaime07ag/llm-transistor-sizing/dataset/large/instances/circuit_015.json",
+    "solution_path": "/Users/jaime07ag/llm-transistor-sizing/dataset/large/solutions/circuit_015_solution.json",
+    "grid": {
+      "rows": 3,
+      "cols": 4
+    },
+    "n_transistors": 7,
+    "ref_hpwl": 12.0,
+    "ref_cost": 2.4
+  },
+  {
+    "id": "circuit_016",
+    "name": "BIAS_CIRCUIT",
+    "instance_path": "/Users/jaime07ag/llm-transistor-sizing/dataset/large/instances/circuit_016.json",
+    "solution_path": "/Users/jaime07ag/llm-transistor-sizing/dataset/large/solutions/circuit_016_solution.json",
+    "grid": {
+      "rows": 3,
+      "cols": 4
+    },
+    "n_transistors": 7,
+    "ref_hpwl": 12.0,
+    "ref_cost": 2.4
+  },
+  {
+    "id": "circuit_017",
+    "name": "INPUT_PAIR_BIAS",
+    "instance_path": "/Users/jaime07ag/llm-transistor-sizing/dataset/large/instances/circuit_017.json",
+    "solution_path": "/Users/jaime07ag/llm-transistor-sizing/dataset/large/solutions/circuit_017_solution.json",
+    "grid": {
+      "rows": 3,
+      "cols": 4
+    },
+    "n_transistors": 7,
+    "ref_hpwl": 13.0,
+    "ref_cost": 2.6
+  },
+  {
+    "id": "circuit_018",
+    "name": "LOAD_MIRROR_FULL",
+    "instance_path": "/Users/jaime07ag/llm-transistor-sizing/dataset/large/instances/circuit_018.json",
+    "solution_path": "/Users/jaime07ag/llm-transistor-sizing/dataset/large/solutions/circuit_018_solution.json",
+    "grid": {
+      "rows": 3,
+      "cols": 4
+    },
+    "n_transistors": 6,
+    "ref_hpwl": 10.0,
+    "ref_cost": 2.0
+  },
+  {
+    "id": "circuit_019",
+    "name": "REGULATED_CASCODE",
+    "instance_path": "/Users/jaime07ag/llm-transistor-sizing/dataset/large/instances/circuit_019.json",
+    "solution_path": "/Users/jaime07ag/llm-transistor-sizing/dataset/large/solutions/circuit_019_solution.json",
+    "grid": {
+      "rows": 3,
+      "cols": 4
+    },
+    "n_transistors": 6,
+    "ref_hpwl": 10.0,
+    "ref_cost": 2.0
+  },
+  {
+    "id": "circuit_020",
+    "name": "TRANSLINEAR_LOOP",
+    "instance_path": "/Users/jaime07ag/llm-transistor-sizing/dataset/large/instances/circuit_020.json",
+    "solution_path": "/Users/jaime07ag/llm-transistor-sizing/dataset/large/solutions/circuit_020_solution.json",
+    "grid": {
+      "rows": 3,
+      "cols": 4
+    },
+    "n_transistors": 6,
+    "ref_hpwl": 10.0,
+    "ref_cost": 2.0
+  }
+]

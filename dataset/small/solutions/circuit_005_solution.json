@@ -1,0 +1,38 @@
+{
+  "id": "circuit_005",
+  "placement": {
+    "M1": [
+      1,
+      2
+    ],
+    "M2": [
+      0,
+      2
+    ],
+    "MTAIL": [
+      0,
+      1
+    ]
+  },
+  "sizing": {
+    "M1": {
+      "W": 2.1,
+      "L": 0.5
+    },
+    "M2": {
+      "W": 2.1,
+      "L": 0.5
+    },
+    "MTAIL": {
+      "W": 4.2,
+      "L": 0.5
+    }
+  },
+  "metrics": {
+    "hpwl": 4.0,
+    "hpwl_normalized": 1.3333333333333333,
+    "sizing_violations": 0,
+    "matching_violations": 0,
+    "cost": 1.3333333333333333
+  }
+}

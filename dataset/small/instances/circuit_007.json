@@ -1,0 +1,50 @@
+{
+  "id": "circuit_007",
+  "name": "SOURCE_FOLLOWER",
+  "description": "NMOS source follower with PMOS current load",
+  "grid": {
+    "rows": 2,
+    "cols": 3
+  },
+  "transistors": [
+    {
+      "id": "MN",
+      "type": "nmos",
+      "role": "output_nmos",
+      "nets": {
+        "gate": "IN",
+        "drain": "VDD",
+        "source": "OUT",
+        "bulk": "GND"
+      }
+    },
+    {
+      "id": "MP",
+      "type": "pmos",
+      "role": "load_pmos",
+      "nets": {
+        "gate": "VBIAS",
+        "drain": "OUT",
+        "source": "VDD",
+        "bulk": "VDD"
+      }
+    }
+  ],
+  "sizing_constraints": {
+    "match_groups": [],
+    "bounds": {
+      "MN": {
+        "W_min": 1.68,
+        "W_max": 4.2,
+        "L_min": 0.15,
+        "L_max": 0.5
+      },
+      "MP": {
+        "W_min": 0.84,
+        "W_max": 2.1,
+        "L_min": 0.18,
+        "L_max": 0.5
+      }
+    }
+  }
+}

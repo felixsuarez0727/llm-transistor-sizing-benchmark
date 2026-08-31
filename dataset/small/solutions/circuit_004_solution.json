@@ -1,0 +1,30 @@
+{
+  "id": "circuit_004",
+  "placement": {
+    "MREF": [
+      0,
+      1
+    ],
+    "MOUT": [
+      0,
+      0
+    ]
+  },
+  "sizing": {
+    "MREF": {
+      "W": 2.1,
+      "L": 0.5
+    },
+    "MOUT": {
+      "W": 2.1,
+      "L": 0.5
+    }
+  },
+  "metrics": {
+    "hpwl": 2.0,
+    "hpwl_normalized": 0.6666666666666666,
+    "sizing_violations": 0,
+    "matching_violations": 0,
+    "cost": 0.6666666666666666
+  }
+}

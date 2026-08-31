@@ -1,0 +1,146 @@
+{
+  "id": "circuit_016",
+  "name": "BIAS_CIRCUIT",
+  "description": "Beta-multiplier bias: self-biased NMOS + PMOS with startup",
+  "grid": {
+    "rows": 3,
+    "cols": 4
+  },
+  "transistors": [
+    {
+      "id": "MN1",
+      "type": "nmos",
+      "role": "mirror_nmos",
+      "nets": {
+        "gate": "VBN",
+        "drain": "VBN",
+        "source": "GND",
+        "bulk": "GND"
+      }
+    },
+    {
+      "id": "MN2",
+      "type": "nmos",
+      "role": "mirror_nmos",
+      "nets": {
+        "gate": "VBN",
+        "drain": "X1",
+        "source": "GND",
+        "bulk": "GND"
+      }
+    },
+    {
+      "id": "MN3",
+      "type": "nmos",
+      "role": "mirror_nmos",
+      "nets": {
+        "gate": "VBN",
+        "drain": "VBN2",
+        "source": "GND",
+        "bulk": "GND"
+      }
+    },
+    {
+      "id": "MP1",
+      "type": "pmos",
+      "role": "mirror_pmos",
+      "nets": {
+        "gate": "VBP",
+        "drain": "VBN",
+        "source": "VDD",
+        "bulk": "VDD"
+      }
+    },
+    {
+      "id": "MP2",
+      "type": "pmos",
+      "role": "mirror_pmos",
+      "nets": {
+        "gate": "VBP",
+        "drain": "X1",
+        "source": "VDD",
+        "bulk": "VDD"
+      }
+    },
+    {
+      "id": "MP3",
+      "type": "pmos",
+      "role": "mirror_pmos",
+      "nets": {
+        "gate": "VBP",
+        "drain": "VBP",
+        "source": "VDD",
+        "bulk": "VDD"
+      }
+    },
+    {
+      "id": "MST",
+      "type": "pmos",
+      "role": "logic_pmos",
+      "nets": {
+        "gate": "VBP",
+        "drain": "GND",
+        "source": "VDD",
+        "bulk": "VDD"
+      }
+    }
+  ],
+  "sizing_constraints": {
+    "match_groups": [
+      [
+        "MN1",
+        "MN2",
+        "MN3"
+      ],
+      [
+        "MP1",
+        "MP2",
+        "MP3"
+      ]
+    ],
+    "bounds": {
+      "MN1": {
+        "W_min": 0.84,
+        "W_max": 4.2,
+        "L_min": 0.35,
+        "L_max": 1.0
+      },
+      "MN2": {
+        "W_min": 0.84,
+        "W_max": 4.2,
+        "L_min": 0.35,
+        "L_max": 1.0
+      },
+      "MN3": {
+        "W_min": 0.84,
+        "W_max": 4.2,
+        "L_min": 0.35,
+        "L_max": 1.0
+      },
+      "MP1": {
+        "W_min": 0.84,
+        "W_max": 4.2,
+        "L_min": 0.35,
+        "L_max": 1.0
+      },
+      "MP2": {
+        "W_min": 0.84,
+        "W_max": 4.2,
+        "L_min": 0.35,
+        "L_max": 1.0
+      },
+      "MP3": {
+        "W_min": 0.84,
+        "W_max": 4.2,
+        "L_min": 0.35,
+        "L_max": 1.0
+      },
+      "MST": {
+        "W_min": 0.42,
+        "W_max": 1.26,
+        "L_min": 0.15,
+        "L_max": 0.35
+      }
+    }
+  }
+}

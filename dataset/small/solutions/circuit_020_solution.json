@@ -1,0 +1,46 @@
+{
+  "id": "circuit_020",
+  "placement": {
+    "MP1": [
+      1,
+      0
+    ],
+    "MPSW": [
+      0,
+      0
+    ],
+    "MN1": [
+      1,
+      1
+    ],
+    "MNSW": [
+      1,
+      2
+    ]
+  },
+  "sizing": {
+    "MP1": {
+      "W": 1.26,
+      "L": 0.18
+    },
+    "MPSW": {
+      "W": 1.26,
+      "L": 0.18
+    },
+    "MN1": {
+      "W": 1.26,
+      "L": 0.18
+    },
+    "MNSW": {
+      "W": 1.26,
+      "L": 0.18
+    }
+  },
+  "metrics": {
+    "hpwl": 6.0,
+    "hpwl_normalized": 2.0,
+    "sizing_violations": 0,
+    "matching_violations": 0,
+    "cost": 2.0
+  }
+}

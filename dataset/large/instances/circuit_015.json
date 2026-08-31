@@ -1,0 +1,148 @@
+{
+  "id": "circuit_015",
+  "name": "DIFF_PAIR_CASCODE",
+  "description": "Differential pair with cascode NMOS and PMOS loads",
+  "grid": {
+    "rows": 3,
+    "cols": 4
+  },
+  "transistors": [
+    {
+      "id": "M1",
+      "type": "nmos",
+      "role": "diff_pair_nmos",
+      "nets": {
+        "gate": "INP",
+        "drain": "X1",
+        "source": "TAIL",
+        "bulk": "GND"
+      }
+    },
+    {
+      "id": "M2",
+      "type": "nmos",
+      "role": "diff_pair_nmos",
+      "nets": {
+        "gate": "INN",
+        "drain": "X2",
+        "source": "TAIL",
+        "bulk": "GND"
+      }
+    },
+    {
+      "id": "MB",
+      "type": "nmos",
+      "role": "tail_nmos",
+      "nets": {
+        "gate": "VBN",
+        "drain": "TAIL",
+        "source": "GND",
+        "bulk": "GND"
+      }
+    },
+    {
+      "id": "MC1",
+      "type": "nmos",
+      "role": "bias_nmos",
+      "nets": {
+        "gate": "VBC",
+        "drain": "OUTP",
+        "source": "X1",
+        "bulk": "GND"
+      }
+    },
+    {
+      "id": "MC2",
+      "type": "nmos",
+      "role": "bias_nmos",
+      "nets": {
+        "gate": "VBC",
+        "drain": "OUTN",
+        "source": "X2",
+        "bulk": "GND"
+      }
+    },
+    {
+      "id": "ML1",
+      "type": "pmos",
+      "role": "load_pmos",
+      "nets": {
+        "gate": "VBP",
+        "drain": "OUTP",
+        "source": "VDD",
+        "bulk": "VDD"
+      }
+    },
+    {
+      "id": "ML2",
+      "type": "pmos",
+      "role": "load_pmos",
+      "nets": {
+        "gate": "VBP",
+        "drain": "OUTN",
+        "source": "VDD",
+        "bulk": "VDD"
+      }
+    }
+  ],
+  "sizing_constraints": {
+    "match_groups": [
+      [
+        "M1",
+        "M2"
+      ],
+      [
+        "MC1",
+        "MC2"
+      ],
+      [
+        "ML1",
+        "ML2"
+      ]
+    ],
+    "bounds": {
+      "M1": {
+        "W_min": 1.26,
+        "W_max": 4.2,
+        "L_min": 0.35,
+        "L_max": 1.0
+      },
+      "M2": {
+        "W_min": 1.26,
+        "W_max": 4.2,
+        "L_min": 0.35,
+        "L_max": 1.0
+      },
+      "MB": {
+        "W_min": 2.1,
+        "W_max": 4.2,
+        "L_min": 0.35,
+        "L_max": 1.0
+      },
+      "MC1": {
+        "W_min": 0.84,
+        "W_max": 2.1,
+        "L_min": 0.35,
+        "L_max": 1.0
+      },
+      "MC2": {
+        "W_min": 0.84,
+        "W_max": 2.1,
+        "L_min": 0.35,
+        "L_max": 1.0
+      },
+      "ML1": {
+        "W_min": 0.84,
+        "W_max": 4.2,
+        "L_min": 0.35,
+        "L_max": 1.0
+      },
+      "ML2": {
+        "W_min": 0.84,
+        "W_max": 4.2,
+        "L_min": 0.35,
+        "L_max": 1.0
+      }
+    }
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "id": "circuit_019",
+  "name": "SCHMITT_TRIG",
+  "description": "CMOS Schmitt trigger: hysteresis via feedback PMOS+NMOS",
+  "grid": {
+    "rows": 2,
+    "cols": 3
+  },
+  "transistors": [
+    {
+      "id": "MP1",
+      "type": "pmos",
+      "role": "inv_pmos",
+      "nets": {
+        "gate": "IN",
+        "drain": "OUT",
+        "source": "VDD",
+        "bulk": "VDD"
+      }
+    },
+    {
+      "id": "MPF",
+      "type": "pmos",
+      "role": "logic_pmos",
+      "nets": {
+        "gate": "OUT",
+        "drain": "VDD",
+        "source": "MP1_S",
+        "bulk": "VDD"
+      }
+    },
+    {
+      "id": "MN1",
+      "type": "nmos",
+      "role": "inv_nmos",
+      "nets": {
+        "gate": "IN",
+        "drain": "OUT",
+        "source": "GND",
+        "bulk": "GND"
+      }
+    },
+    {
+      "id": "MNF",
+      "type": "nmos",
+      "role": "logic_nmos",
+      "nets": {
+        "gate": "OUT",
+        "drain": "MN1_S",
+        "source": "GND",
+        "bulk": "GND"
+      }
+    }
+  ],
+  "sizing_constraints": {
+    "match_groups": [],
+    "bounds": {
+      "MP1": {
+        "W_min": 0.84,
+        "W_max": 2.1,
+        "L_min": 0.15,
+        "L_max": 0.35
+      },
+      "MPF": {
+        "W_min": 0.42,
+        "W_max": 1.26,
+        "L_min": 0.15,
+        "L_max": 0.35
+      },
+      "MN1": {
+        "W_min": 0.84,
+        "W_max": 2.1,
+        "L_min": 0.15,
+        "L_max": 0.35
+      },
+      "MNF": {
+        "W_min": 0.42,
+        "W_max": 1.26,
+        "L_min": 0.15,
+        "L_max": 0.35
+      }
+    }
+  }
+}

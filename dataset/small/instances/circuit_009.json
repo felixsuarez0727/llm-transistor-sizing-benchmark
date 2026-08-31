@@ -1,0 +1,57 @@
+{
+  "id": "circuit_009",
+  "name": "MIRROR_WIDE",
+  "description": "NMOS current mirror 1:2 ratio (MOUT twice as wide as MREF)",
+  "grid": {
+    "rows": 2,
+    "cols": 3
+  },
+  "transistors": [
+    {
+      "id": "MREF",
+      "type": "nmos",
+      "role": "mirror_nmos",
+      "nets": {
+        "gate": "BIAS",
+        "drain": "BIAS",
+        "source": "GND",
+        "bulk": "GND"
+      }
+    },
+    {
+      "id": "MOUT",
+      "type": "nmos",
+      "role": "mirror_nmos",
+      "nets": {
+        "gate": "BIAS",
+        "drain": "OUT",
+        "source": "GND",
+        "bulk": "GND"
+      }
+    }
+  ],
+  "sizing_constraints": {
+    "match_groups": [],
+    "ratio_constraints": [
+      {
+        "numerator": "MOUT",
+        "denominator": "MREF",
+        "W_ratio": 2.0
+      }
+    ],
+    "bounds": {
+      "MREF": {
+        "W_min": 0.84,
+        "W_max": 2.1,
+        "L_min": 0.35,
+        "L_max": 1.0
+      },
+      "MOUT": {
+        "W_min": 1.68,
+        "W_max": 4.2,
+        "L_min": 0.35,
+        "L_max": 1.0
+      }
+    }
+  }
+}

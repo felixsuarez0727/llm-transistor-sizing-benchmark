@@ -1,0 +1,72 @@
+{
+  "id": "circuit_014",
+  "name": "WILSON_MIRROR",
+  "description": "Wilson current mirror: 3 NMOS for improved output impedance",
+  "grid": {
+    "rows": 2,
+    "cols": 3
+  },
+  "transistors": [
+    {
+      "id": "M1",
+      "type": "nmos",
+      "role": "mirror_nmos",
+      "nets": {
+        "gate": "VBIAS",
+        "drain": "VBIAS",
+        "source": "GND",
+        "bulk": "GND"
+      }
+    },
+    {
+      "id": "M2",
+      "type": "nmos",
+      "role": "mirror_nmos",
+      "nets": {
+        "gate": "VBIAS",
+        "drain": "X",
+        "source": "GND",
+        "bulk": "GND"
+      }
+    },
+    {
+      "id": "M3",
+      "type": "nmos",
+      "role": "bias_nmos",
+      "nets": {
+        "gate": "X",
+        "drain": "OUT",
+        "source": "VBIAS",
+        "bulk": "GND"
+      }
+    }
+  ],
+  "sizing_constraints": {
+    "match_groups": [
+      [
+        "M1",
+        "M2"
+      ]
+    ],
+    "bounds": {
+      "M1": {
+        "W_min": 0.84,
+        "W_max": 4.2,
+        "L_min": 0.35,
+        "L_max": 1.0
+      },
+      "M2": {
+        "W_min": 0.84,
+        "W_max": 4.2,
+        "L_min": 0.35,
+        "L_max": 1.0
+      },
+      "M3": {
+        "W_min": 0.84,
+        "W_max": 2.1,
+        "L_min": 0.35,
+        "L_max": 1.0
+      }
+    }
+  }
+}

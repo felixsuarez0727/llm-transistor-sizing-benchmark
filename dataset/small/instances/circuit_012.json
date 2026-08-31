@@ -1,0 +1,50 @@
+{
+  "id": "circuit_012",
+  "name": "DIODE_NMOS",
+  "description": "Diode-connected NMOS with resistive load (PMOS bias)",
+  "grid": {
+    "rows": 2,
+    "cols": 3
+  },
+  "transistors": [
+    {
+      "id": "MD",
+      "type": "nmos",
+      "role": "bias_nmos",
+      "nets": {
+        "gate": "BIAS",
+        "drain": "BIAS",
+        "source": "GND",
+        "bulk": "GND"
+      }
+    },
+    {
+      "id": "MLOAD",
+      "type": "pmos",
+      "role": "load_pmos",
+      "nets": {
+        "gate": "VBIAS",
+        "drain": "BIAS",
+        "source": "VDD",
+        "bulk": "VDD"
+      }
+    }
+  ],
+  "sizing_constraints": {
+    "match_groups": [],
+    "bounds": {
+      "MD": {
+        "W_min": 0.84,
+        "W_max": 2.1,
+        "L_min": 0.35,
+        "L_max": 1.0
+      },
+      "MLOAD": {
+        "W_min": 0.84,
+        "W_max": 2.1,
+        "L_min": 0.18,
+        "L_max": 0.5
+      }
+    }
+  }
+}

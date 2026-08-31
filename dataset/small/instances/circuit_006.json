@@ -1,0 +1,50 @@
+{
+  "id": "circuit_006",
+  "name": "CASCODE_N",
+  "description": "NMOS cascode: input device + cascode device stacked",
+  "grid": {
+    "rows": 2,
+    "cols": 3
+  },
+  "transistors": [
+    {
+      "id": "M1",
+      "type": "nmos",
+      "role": "mirror_nmos",
+      "nets": {
+        "gate": "VIN",
+        "drain": "VS",
+        "source": "GND",
+        "bulk": "GND"
+      }
+    },
+    {
+      "id": "M2",
+      "type": "nmos",
+      "role": "bias_nmos",
+      "nets": {
+        "gate": "VBIAS",
+        "drain": "OUT",
+        "source": "VS",
+        "bulk": "GND"
+      }
+    }
+  ],
+  "sizing_constraints": {
+    "match_groups": [],
+    "bounds": {
+      "M1": {
+        "W_min": 0.84,
+        "W_max": 4.2,
+        "L_min": 0.35,
+        "L_max": 1.0
+      },
+      "M2": {
+        "W_min": 0.84,
+        "W_max": 2.1,
+        "L_min": 0.35,
+        "L_max": 1.0
+      }
+    }
+  }
+}

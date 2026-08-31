@@ -1,0 +1,46 @@
+{
+  "id": "circuit_018",
+  "placement": {
+    "MP1": [
+      1,
+      1
+    ],
+    "MN1": [
+      0,
+      1
+    ],
+    "MP2": [
+      1,
+      0
+    ],
+    "MN2": [
+      0,
+      0
+    ]
+  },
+  "sizing": {
+    "MP1": {
+      "W": 1.68,
+      "L": 0.18
+    },
+    "MN1": {
+      "W": 0.84,
+      "L": 0.18
+    },
+    "MP2": {
+      "W": 1.68,
+      "L": 0.18
+    },
+    "MN2": {
+      "W": 0.84,
+      "L": 0.18
+    }
+  },
+  "metrics": {
+    "hpwl": 6.0,
+    "hpwl_normalized": 2.0,
+    "sizing_violations": 0,
+    "matching_violations": 0,
+    "cost": 2.0
+  }
+}

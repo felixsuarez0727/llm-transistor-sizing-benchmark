@@ -1,0 +1,62 @@
+{
+  "id": "circuit_013",
+  "placement": {
+    "MUP": [
+      0,
+      2
+    ],
+    "MSWUP": [
+      0,
+      1
+    ],
+    "MSWDN": [
+      1,
+      1
+    ],
+    "MDN": [
+      1,
+      0
+    ],
+    "MREF_P": [
+      0,
+      3
+    ],
+    "MREF_N": [
+      0,
+      0
+    ]
+  },
+  "sizing": {
+    "MUP": {
+      "W": 2.1,
+      "L": 0.5
+    },
+    "MSWUP": {
+      "W": 1.26,
+      "L": 0.18
+    },
+    "MSWDN": {
+      "W": 1.26,
+      "L": 0.18
+    },
+    "MDN": {
+      "W": 2.1,
+      "L": 0.5
+    },
+    "MREF_P": {
+      "W": 2.1,
+      "L": 0.5
+    },
+    "MREF_N": {
+      "W": 2.1,
+      "L": 0.5
+    }
+  },
+  "metrics": {
+    "hpwl": 9.0,
+    "hpwl_normalized": 1.8,
+    "sizing_violations": 0,
+    "matching_violations": 0,
+    "cost": 1.8
+  }
+}

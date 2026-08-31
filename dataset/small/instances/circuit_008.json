@@ -1,0 +1,89 @@
+{
+  "id": "circuit_008",
+  "name": "NOR2",
+  "description": "2-input NOR: 2 series PMOS + 2 parallel NMOS",
+  "grid": {
+    "rows": 2,
+    "cols": 3
+  },
+  "transistors": [
+    {
+      "id": "MP1",
+      "type": "pmos",
+      "role": "logic_pmos",
+      "nets": {
+        "gate": "A",
+        "drain": "X",
+        "source": "VDD",
+        "bulk": "VDD"
+      }
+    },
+    {
+      "id": "MP2",
+      "type": "pmos",
+      "role": "logic_pmos",
+      "nets": {
+        "gate": "B",
+        "drain": "OUT",
+        "source": "X",
+        "bulk": "VDD"
+      }
+    },
+    {
+      "id": "MN1",
+      "type": "nmos",
+      "role": "logic_nmos",
+      "nets": {
+        "gate": "A",
+        "drain": "OUT",
+        "source": "GND",
+        "bulk": "GND"
+      }
+    },
+    {
+      "id": "MN2",
+      "type": "nmos",
+      "role": "logic_nmos",
+      "nets": {
+        "gate": "B",
+        "drain": "OUT",
+        "source": "GND",
+        "bulk": "GND"
+      }
+    }
+  ],
+  "sizing_constraints": {
+    "match_groups": [
+      [
+        "MN1",
+        "MN2"
+      ]
+    ],
+    "bounds": {
+      "MP1": {
+        "W_min": 1.26,
+        "W_max": 4.2,
+        "L_min": 0.15,
+        "L_max": 0.35
+      },
+      "MP2": {
+        "W_min": 1.26,
+        "W_max": 4.2,
+        "L_min": 0.15,
+        "L_max": 0.35
+      },
+      "MN1": {
+        "W_min": 0.42,
+        "W_max": 1.26,
+        "L_min": 0.15,
+        "L_max": 0.35
+      },
+      "MN2": {
+        "W_min": 0.42,
+        "W_max": 1.26,
+        "L_min": 0.15,
+        "L_max": 0.35
+      }
+    }
+  }
+}

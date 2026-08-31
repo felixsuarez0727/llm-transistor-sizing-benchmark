@@ -1,0 +1,93 @@
+{
+  "id": "circuit_015",
+  "name": "CASCODE_MIRROR",
+  "description": "Cascoded NMOS current mirror: 4 devices for high output impedance",
+  "grid": {
+    "rows": 2,
+    "cols": 3
+  },
+  "transistors": [
+    {
+      "id": "MR1",
+      "type": "nmos",
+      "role": "mirror_nmos",
+      "nets": {
+        "gate": "VBIAS1",
+        "drain": "VB",
+        "source": "GND",
+        "bulk": "GND"
+      }
+    },
+    {
+      "id": "MR2",
+      "type": "nmos",
+      "role": "bias_nmos",
+      "nets": {
+        "gate": "VBIAS2",
+        "drain": "VBIAS1",
+        "source": "VB",
+        "bulk": "GND"
+      }
+    },
+    {
+      "id": "MO1",
+      "type": "nmos",
+      "role": "mirror_nmos",
+      "nets": {
+        "gate": "VBIAS1",
+        "drain": "X",
+        "source": "GND",
+        "bulk": "GND"
+      }
+    },
+    {
+      "id": "MO2",
+      "type": "nmos",
+      "role": "bias_nmos",
+      "nets": {
+        "gate": "VBIAS2",
+        "drain": "OUT",
+        "source": "X",
+        "bulk": "GND"
+      }
+    }
+  ],
+  "sizing_constraints": {
+    "match_groups": [
+      [
+        "MR1",
+        "MO1"
+      ],
+      [
+        "MR2",
+        "MO2"
+      ]
+    ],
+    "bounds": {
+      "MR1": {
+        "W_min": 0.84,
+        "W_max": 4.2,
+        "L_min": 0.35,
+        "L_max": 1.0
+      },
+      "MR2": {
+        "W_min": 0.84,
+        "W_max": 2.1,
+        "L_min": 0.35,
+        "L_max": 1.0
+      },
+      "MO1": {
+        "W_min": 0.84,
+        "W_max": 4.2,
+        "L_min": 0.35,
+        "L_max": 1.0
+      },
+      "MO2": {
+        "W_min": 0.84,
+        "W_max": 2.1,
+        "L_min": 0.35,
+        "L_max": 1.0
+      }
+    }
+  }
+}

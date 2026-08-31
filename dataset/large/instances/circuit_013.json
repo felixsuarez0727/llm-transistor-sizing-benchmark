@@ -1,0 +1,127 @@
+{
+  "id": "circuit_013",
+  "name": "CHARGE_PUMP",
+  "description": "Charge pump: up/down current source pair + switches",
+  "grid": {
+    "rows": 3,
+    "cols": 4
+  },
+  "transistors": [
+    {
+      "id": "MUP",
+      "type": "pmos",
+      "role": "mirror_pmos",
+      "nets": {
+        "gate": "VBP",
+        "drain": "X1",
+        "source": "VDD",
+        "bulk": "VDD"
+      }
+    },
+    {
+      "id": "MSWUP",
+      "type": "pmos",
+      "role": "logic_pmos",
+      "nets": {
+        "gate": "UPB",
+        "drain": "OUT",
+        "source": "X1",
+        "bulk": "VDD"
+      }
+    },
+    {
+      "id": "MSWDN",
+      "type": "nmos",
+      "role": "logic_nmos",
+      "nets": {
+        "gate": "DN",
+        "drain": "OUT",
+        "source": "X2",
+        "bulk": "GND"
+      }
+    },
+    {
+      "id": "MDN",
+      "type": "nmos",
+      "role": "mirror_nmos",
+      "nets": {
+        "gate": "VBN",
+        "drain": "X2",
+        "source": "GND",
+        "bulk": "GND"
+      }
+    },
+    {
+      "id": "MREF_P",
+      "type": "pmos",
+      "role": "mirror_pmos",
+      "nets": {
+        "gate": "VBP",
+        "drain": "VBP",
+        "source": "VDD",
+        "bulk": "VDD"
+      }
+    },
+    {
+      "id": "MREF_N",
+      "type": "nmos",
+      "role": "mirror_nmos",
+      "nets": {
+        "gate": "VBN",
+        "drain": "VBN",
+        "source": "GND",
+        "bulk": "GND"
+      }
+    }
+  ],
+  "sizing_constraints": {
+    "match_groups": [
+      [
+        "MUP",
+        "MREF_P"
+      ],
+      [
+        "MDN",
+        "MREF_N"
+      ]
+    ],
+    "bounds": {
+      "MUP": {
+        "W_min": 1.26,
+        "W_max": 4.2,
+        "L_min": 0.35,
+        "L_max": 1.0
+      },
+      "MSWUP": {
+        "W_min": 0.84,
+        "W_max": 2.1,
+        "L_min": 0.15,
+        "L_max": 0.35
+      },
+      "MSWDN": {
+        "W_min": 0.84,
+        "W_max": 2.1,
+        "L_min": 0.15,
+        "L_max": 0.35
+      },
+      "MDN": {
+        "W_min": 1.26,
+        "W_max": 4.2,
+        "L_min": 0.35,
+        "L_max": 1.0
+      },
+      "MREF_P": {
+        "W_min": 1.26,
+        "W_max": 4.2,
+        "L_min": 0.35,
+        "L_max": 1.0
+      },
+      "MREF_N": {
+        "W_min": 1.26,
+        "W_max": 4.2,
+        "L_min": 0.35,
+        "L_max": 1.0
+      }
+    }
+  }
+}

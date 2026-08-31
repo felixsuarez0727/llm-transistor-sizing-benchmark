@@ -1,0 +1,148 @@
+{
+  "id": "circuit_004",
+  "name": "COMPARATOR",
+  "description": "StrongARM latch comparator: diff input pair + latch PMOS/NMOS",
+  "grid": {
+    "rows": 3,
+    "cols": 4
+  },
+  "transistors": [
+    {
+      "id": "MIN1",
+      "type": "nmos",
+      "role": "diff_pair_nmos",
+      "nets": {
+        "gate": "INP",
+        "drain": "X1",
+        "source": "TAIL",
+        "bulk": "GND"
+      }
+    },
+    {
+      "id": "MIN2",
+      "type": "nmos",
+      "role": "diff_pair_nmos",
+      "nets": {
+        "gate": "INN",
+        "drain": "X2",
+        "source": "TAIL",
+        "bulk": "GND"
+      }
+    },
+    {
+      "id": "MCLK",
+      "type": "nmos",
+      "role": "logic_nmos",
+      "nets": {
+        "gate": "CLK",
+        "drain": "TAIL",
+        "source": "GND",
+        "bulk": "GND"
+      }
+    },
+    {
+      "id": "ML1",
+      "type": "pmos",
+      "role": "load_pmos",
+      "nets": {
+        "gate": "QB",
+        "drain": "Q",
+        "source": "VDD",
+        "bulk": "VDD"
+      }
+    },
+    {
+      "id": "ML2",
+      "type": "pmos",
+      "role": "load_pmos",
+      "nets": {
+        "gate": "Q",
+        "drain": "QB",
+        "source": "VDD",
+        "bulk": "VDD"
+      }
+    },
+    {
+      "id": "MR1",
+      "type": "nmos",
+      "role": "logic_nmos",
+      "nets": {
+        "gate": "QB",
+        "drain": "Q",
+        "source": "X1",
+        "bulk": "GND"
+      }
+    },
+    {
+      "id": "MR2",
+      "type": "nmos",
+      "role": "logic_nmos",
+      "nets": {
+        "gate": "Q",
+        "drain": "QB",
+        "source": "X2",
+        "bulk": "GND"
+      }
+    }
+  ],
+  "sizing_constraints": {
+    "match_groups": [
+      [
+        "MIN1",
+        "MIN2"
+      ],
+      [
+        "ML1",
+        "ML2"
+      ],
+      [
+        "MR1",
+        "MR2"
+      ]
+    ],
+    "bounds": {
+      "MIN1": {
+        "W_min": 1.26,
+        "W_max": 4.2,
+        "L_min": 0.35,
+        "L_max": 1.0
+      },
+      "MIN2": {
+        "W_min": 1.26,
+        "W_max": 4.2,
+        "L_min": 0.35,
+        "L_max": 1.0
+      },
+      "MCLK": {
+        "W_min": 2.1,
+        "W_max": 4.2,
+        "L_min": 0.15,
+        "L_max": 0.35
+      },
+      "ML1": {
+        "W_min": 0.84,
+        "W_max": 2.1,
+        "L_min": 0.15,
+        "L_max": 0.35
+      },
+      "ML2": {
+        "W_min": 0.84,
+        "W_max": 2.1,
+        "L_min": 0.15,
+        "L_max": 0.35
+      },
+      "MR1": {
+        "W_min": 0.84,
+        "W_max": 2.1,
+        "L_min": 0.15,
+        "L_max": 0.35
+      },
+      "MR2": {
+        "W_min": 0.84,
+        "W_max": 2.1,
+        "L_min": 0.15,
+        "L_max": 0.35
+      }
+    }
+  }
+}

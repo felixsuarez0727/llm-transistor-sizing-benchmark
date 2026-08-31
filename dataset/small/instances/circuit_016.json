@@ -1,0 +1,72 @@
+{
+  "id": "circuit_016",
+  "name": "DIFFPAIR_PMOS",
+  "description": "PMOS differential pair with tail + NMOS loads",
+  "grid": {
+    "rows": 2,
+    "cols": 3
+  },
+  "transistors": [
+    {
+      "id": "MP1",
+      "type": "pmos",
+      "role": "diff_pair_pmos",
+      "nets": {
+        "gate": "INP",
+        "drain": "OUTP",
+        "source": "TAIL",
+        "bulk": "VDD"
+      }
+    },
+    {
+      "id": "MP2",
+      "type": "pmos",
+      "role": "diff_pair_pmos",
+      "nets": {
+        "gate": "INN",
+        "drain": "OUTN",
+        "source": "TAIL",
+        "bulk": "VDD"
+      }
+    },
+    {
+      "id": "MTAIL",
+      "type": "pmos",
+      "role": "tail_pmos",
+      "nets": {
+        "gate": "VBIAS",
+        "drain": "TAIL",
+        "source": "VDD",
+        "bulk": "VDD"
+      }
+    }
+  ],
+  "sizing_constraints": {
+    "match_groups": [
+      [
+        "MP1",
+        "MP2"
+      ]
+    ],
+    "bounds": {
+      "MP1": {
+        "W_min": 1.26,
+        "W_max": 4.2,
+        "L_min": 0.35,
+        "L_max": 1.0
+      },
+      "MP2": {
+        "W_min": 1.26,
+        "W_max": 4.2,
+        "L_min": 0.35,
+        "L_max": 1.0
+      },
+      "MTAIL": {
+        "W_min": 2.1,
+        "W_max": 4.2,
+        "L_min": 0.35,
+        "L_max": 1.0
+      }
+    }
+  }
+}

@@ -1,0 +1,145 @@
+{
+  "id": "circuit_017",
+  "name": "INPUT_PAIR_BIAS",
+  "description": "Input pair with bias mirror: PMOS diff pair + NMOS mirror bias",
+  "grid": {
+    "rows": 3,
+    "cols": 4
+  },
+  "transistors": [
+    {
+      "id": "MP1",
+      "type": "pmos",
+      "role": "diff_pair_pmos",
+      "nets": {
+        "gate": "INP",
+        "drain": "OUTP",
+        "source": "TAIL",
+        "bulk": "VDD"
+      }
+    },
+    {
+      "id": "MP2",
+      "type": "pmos",
+      "role": "diff_pair_pmos",
+      "nets": {
+        "gate": "INN",
+        "drain": "OUTN",
+        "source": "TAIL",
+        "bulk": "VDD"
+      }
+    },
+    {
+      "id": "MTAIL",
+      "type": "pmos",
+      "role": "tail_pmos",
+      "nets": {
+        "gate": "VBP",
+        "drain": "TAIL",
+        "source": "VDD",
+        "bulk": "VDD"
+      }
+    },
+    {
+      "id": "MN1",
+      "type": "nmos",
+      "role": "mirror_nmos",
+      "nets": {
+        "gate": "VBN",
+        "drain": "OUTP",
+        "source": "GND",
+        "bulk": "GND"
+      }
+    },
+    {
+      "id": "MN2",
+      "type": "nmos",
+      "role": "mirror_nmos",
+      "nets": {
+        "gate": "VBN",
+        "drain": "OUTN",
+        "source": "GND",
+        "bulk": "GND"
+      }
+    },
+    {
+      "id": "MBN",
+      "type": "nmos",
+      "role": "mirror_nmos",
+      "nets": {
+        "gate": "VBN",
+        "drain": "VBN",
+        "source": "GND",
+        "bulk": "GND"
+      }
+    },
+    {
+      "id": "MBP",
+      "type": "pmos",
+      "role": "bias_pmos",
+      "nets": {
+        "gate": "VBP",
+        "drain": "VBN",
+        "source": "VDD",
+        "bulk": "VDD"
+      }
+    }
+  ],
+  "sizing_constraints": {
+    "match_groups": [
+      [
+        "MP1",
+        "MP2"
+      ],
+      [
+        "MN1",
+        "MN2",
+        "MBN"
+      ]
+    ],
+    "bounds": {
+      "MP1": {
+        "W_min": 1.26,
+        "W_max": 4.2,
+        "L_min": 0.35,
+        "L_max": 1.0
+      },
+      "MP2": {
+        "W_min": 1.26,
+        "W_max": 4.2,
+        "L_min": 0.35,
+        "L_max": 1.0
+      },
+      "MTAIL": {
+        "W_min": 2.1,
+        "W_max": 4.2,
+        "L_min": 0.35,
+        "L_max": 1.0
+      },
+      "MN1": {
+        "W_min": 0.84,
+        "W_max": 4.2,
+        "L_min": 0.35,
+        "L_max": 1.0
+      },
+      "MN2": {
+        "W_min": 0.84,
+        "W_max": 4.2,
+        "L_min": 0.35,
+        "L_max": 1.0
+      },
+      "MBN": {
+        "W_min": 0.84,
+        "W_max": 4.2,
+        "L_min": 0.35,
+        "L_max": 1.0
+      },
+      "MBP": {
+        "W_min": 0.84,
+        "W_max": 2.1,
+        "L_min": 0.35,
+        "L_max": 1.0
+      }
+    }
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "id": "circuit_010",
+  "name": "TRISTATE",
+  "description": "Tri-state buffer: PMOS + NMOS pass + enable devices",
+  "grid": {
+    "rows": 2,
+    "cols": 3
+  },
+  "transistors": [
+    {
+      "id": "MP",
+      "type": "pmos",
+      "role": "inv_pmos",
+      "nets": {
+        "gate": "IN",
+        "drain": "OUT",
+        "source": "VDD",
+        "bulk": "VDD"
+      }
+    },
+    {
+      "id": "MNP",
+      "type": "nmos",
+      "role": "logic_nmos",
+      "nets": {
+        "gate": "EN",
+        "drain": "OUT",
+        "source": "MID",
+        "bulk": "GND"
+      }
+    },
+    {
+      "id": "MNN",
+      "type": "nmos",
+      "role": "inv_nmos",
+      "nets": {
+        "gate": "IN",
+        "drain": "MID",
+        "source": "GND",
+        "bulk": "GND"
+      }
+    }
+  ],
+  "sizing_constraints": {
+    "match_groups": [],
+    "bounds": {
+      "MP": {
+        "W_min": 0.84,
+        "W_max": 2.1,
+        "L_min": 0.15,
+        "L_max": 0.35
+      },
+      "MNP": {
+        "W_min": 0.42,
+        "W_max": 1.26,
+        "L_min": 0.15,
+        "L_max": 0.35
+      },
+      "MNN": {
+        "W_min": 0.42,
+        "W_max": 1.26,
+        "L_min": 0.15,
+        "L_max": 0.35
+      }
+    }
+  }
+}

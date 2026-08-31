@@ -1,0 +1,146 @@
+{
+  "id": "circuit_010",
+  "name": "RING_VCO",
+  "description": "3-stage ring VCO: 3 differential delay cells (6 transistors + bias)",
+  "grid": {
+    "rows": 3,
+    "cols": 4
+  },
+  "transistors": [
+    {
+      "id": "MP1",
+      "type": "pmos",
+      "role": "inv_pmos",
+      "nets": {
+        "gate": "A",
+        "drain": "B",
+        "source": "VDD",
+        "bulk": "VDD"
+      }
+    },
+    {
+      "id": "MN1",
+      "type": "nmos",
+      "role": "inv_nmos",
+      "nets": {
+        "gate": "A",
+        "drain": "B",
+        "source": "GND",
+        "bulk": "GND"
+      }
+    },
+    {
+      "id": "MP2",
+      "type": "pmos",
+      "role": "inv_pmos",
+      "nets": {
+        "gate": "B",
+        "drain": "C",
+        "source": "VDD",
+        "bulk": "VDD"
+      }
+    },
+    {
+      "id": "MN2",
+      "type": "nmos",
+      "role": "inv_nmos",
+      "nets": {
+        "gate": "B",
+        "drain": "C",
+        "source": "GND",
+        "bulk": "GND"
+      }
+    },
+    {
+      "id": "MP3",
+      "type": "pmos",
+      "role": "inv_pmos",
+      "nets": {
+        "gate": "C",
+        "drain": "A",
+        "source": "VDD",
+        "bulk": "VDD"
+      }
+    },
+    {
+      "id": "MN3",
+      "type": "nmos",
+      "role": "inv_nmos",
+      "nets": {
+        "gate": "C",
+        "drain": "A",
+        "source": "GND",
+        "bulk": "GND"
+      }
+    },
+    {
+      "id": "MCTL",
+      "type": "pmos",
+      "role": "bias_pmos",
+      "nets": {
+        "gate": "VCTRL",
+        "drain": "VDD",
+        "source": "VDD",
+        "bulk": "VDD"
+      }
+    }
+  ],
+  "sizing_constraints": {
+    "match_groups": [
+      [
+        "MP1",
+        "MP2",
+        "MP3"
+      ],
+      [
+        "MN1",
+        "MN2",
+        "MN3"
+      ]
+    ],
+    "bounds": {
+      "MP1": {
+        "W_min": 0.84,
+        "W_max": 2.1,
+        "L_min": 0.15,
+        "L_max": 0.35
+      },
+      "MP2": {
+        "W_min": 0.84,
+        "W_max": 2.1,
+        "L_min": 0.15,
+        "L_max": 0.35
+      },
+      "MP3": {
+        "W_min": 0.84,
+        "W_max": 2.1,
+        "L_min": 0.15,
+        "L_max": 0.35
+      },
+      "MN1": {
+        "W_min": 0.42,
+        "W_max": 1.26,
+        "L_min": 0.15,
+        "L_max": 0.35
+      },
+      "MN2": {
+        "W_min": 0.42,
+        "W_max": 1.26,
+        "L_min": 0.15,
+        "L_max": 0.35
+      },
+      "MN3": {
+        "W_min": 0.42,
+        "W_max": 1.26,
+        "L_min": 0.15,
+        "L_max": 0.35
+      },
+      "MCTL": {
+        "W_min": 0.84,
+        "W_max": 2.1,
+        "L_min": 0.35,
+        "L_max": 1.0
+      }
+    }
+  }
+}

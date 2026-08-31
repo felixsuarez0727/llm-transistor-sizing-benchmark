@@ -1,0 +1,50 @@
+{
+  "id": "circuit_001",
+  "name": "INV",
+  "description": "CMOS inverter: PMOS pull-up + NMOS pull-down",
+  "grid": {
+    "rows": 2,
+    "cols": 3
+  },
+  "transistors": [
+    {
+      "id": "MP",
+      "type": "pmos",
+      "role": "inv_pmos",
+      "nets": {
+        "gate": "IN",
+        "drain": "OUT",
+        "source": "VDD",
+        "bulk": "VDD"
+      }
+    },
+    {
+      "id": "MN",
+      "type": "nmos",
+      "role": "inv_nmos",
+      "nets": {
+        "gate": "IN",
+        "drain": "OUT",
+        "source": "GND",
+        "bulk": "GND"
+      }
+    }
+  ],
+  "sizing_constraints": {
+    "match_groups": [],
+    "bounds": {
+      "MP": {
+        "W_min": 0.84,
+        "W_max": 4.2,
+        "L_min": 0.15,
+        "L_max": 0.5
+      },
+      "MN": {
+        "W_min": 0.42,
+        "W_max": 2.1,
+        "L_min": 0.15,
+        "L_max": 0.5
+      }
+    }
+  }
+}

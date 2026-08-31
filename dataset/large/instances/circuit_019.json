@@ -1,0 +1,127 @@
+{
+  "id": "circuit_019",
+  "name": "REGULATED_CASCODE",
+  "description": "Regulated cascode: NMOS input + PMOS feedback amp for high Rout",
+  "grid": {
+    "rows": 3,
+    "cols": 4
+  },
+  "transistors": [
+    {
+      "id": "MM",
+      "type": "nmos",
+      "role": "mirror_nmos",
+      "nets": {
+        "gate": "VG",
+        "drain": "X1",
+        "source": "GND",
+        "bulk": "GND"
+      }
+    },
+    {
+      "id": "MC",
+      "type": "nmos",
+      "role": "bias_nmos",
+      "nets": {
+        "gate": "VREG",
+        "drain": "OUT",
+        "source": "X1",
+        "bulk": "GND"
+      }
+    },
+    {
+      "id": "MA1",
+      "type": "pmos",
+      "role": "load_pmos",
+      "nets": {
+        "gate": "OUT",
+        "drain": "VREG",
+        "source": "VDD",
+        "bulk": "VDD"
+      }
+    },
+    {
+      "id": "MA2",
+      "type": "pmos",
+      "role": "load_pmos",
+      "nets": {
+        "gate": "VREG",
+        "drain": "X2",
+        "source": "VDD",
+        "bulk": "VDD"
+      }
+    },
+    {
+      "id": "MBN",
+      "type": "nmos",
+      "role": "mirror_nmos",
+      "nets": {
+        "gate": "VG",
+        "drain": "VG",
+        "source": "GND",
+        "bulk": "GND"
+      }
+    },
+    {
+      "id": "MLOAD",
+      "type": "pmos",
+      "role": "mirror_pmos",
+      "nets": {
+        "gate": "VBP",
+        "drain": "OUT",
+        "source": "VDD",
+        "bulk": "VDD"
+      }
+    }
+  ],
+  "sizing_constraints": {
+    "match_groups": [
+      [
+        "MM",
+        "MBN"
+      ],
+      [
+        "MA1",
+        "MA2"
+      ]
+    ],
+    "bounds": {
+      "MM": {
+        "W_min": 0.84,
+        "W_max": 4.2,
+        "L_min": 0.35,
+        "L_max": 1.0
+      },
+      "MC": {
+        "W_min": 0.84,
+        "W_max": 2.1,
+        "L_min": 0.35,
+        "L_max": 1.0
+      },
+      "MA1": {
+        "W_min": 0.42,
+        "W_max": 1.26,
+        "L_min": 0.18,
+        "L_max": 0.5
+      },
+      "MA2": {
+        "W_min": 0.42,
+        "W_max": 1.26,
+        "L_min": 0.18,
+        "L_max": 0.5
+      },
+      "MBN": {
+        "W_min": 0.84,
+        "W_max": 4.2,
+        "L_min": 0.35,
+        "L_max": 1.0
+      },
+      "MLOAD": {
+        "W_min": 0.84,
+        "W_max": 2.1,
+        "L_min": 0.35,
+        "L_max": 1.0
+      }
+    }
+  }
+}

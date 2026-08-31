@@ -1,0 +1,131 @@
+{
+  "id": "circuit_017",
+  "name": "SR_LATCH",
+  "description": "SR latch: 2 cross-coupled NAND pairs (4 NMOS + 2 PMOS)",
+  "grid": {
+    "rows": 2,
+    "cols": 3
+  },
+  "transistors": [
+    {
+      "id": "MP1",
+      "type": "pmos",
+      "role": "logic_pmos",
+      "nets": {
+        "gate": "S",
+        "drain": "Q",
+        "source": "VDD",
+        "bulk": "VDD"
+      }
+    },
+    {
+      "id": "MN1",
+      "type": "nmos",
+      "role": "logic_nmos",
+      "nets": {
+        "gate": "S",
+        "drain": "Q",
+        "source": "X1",
+        "bulk": "GND"
+      }
+    },
+    {
+      "id": "MN2",
+      "type": "nmos",
+      "role": "logic_nmos",
+      "nets": {
+        "gate": "QB",
+        "drain": "X1",
+        "source": "GND",
+        "bulk": "GND"
+      }
+    },
+    {
+      "id": "MP2",
+      "type": "pmos",
+      "role": "logic_pmos",
+      "nets": {
+        "gate": "R",
+        "drain": "QB",
+        "source": "VDD",
+        "bulk": "VDD"
+      }
+    },
+    {
+      "id": "MN3",
+      "type": "nmos",
+      "role": "logic_nmos",
+      "nets": {
+        "gate": "R",
+        "drain": "QB",
+        "source": "X2",
+        "bulk": "GND"
+      }
+    },
+    {
+      "id": "MN4",
+      "type": "nmos",
+      "role": "logic_nmos",
+      "nets": {
+        "gate": "Q",
+        "drain": "X2",
+        "source": "GND",
+        "bulk": "GND"
+      }
+    }
+  ],
+  "sizing_constraints": {
+    "match_groups": [
+      [
+        "MP1",
+        "MP2"
+      ],
+      [
+        "MN1",
+        "MN3"
+      ],
+      [
+        "MN2",
+        "MN4"
+      ]
+    ],
+    "bounds": {
+      "MP1": {
+        "W_min": 0.84,
+        "W_max": 2.1,
+        "L_min": 0.15,
+        "L_max": 0.35
+      },
+      "MP2": {
+        "W_min": 0.84,
+        "W_max": 2.1,
+        "L_min": 0.15,
+        "L_max": 0.35
+      },
+      "MN1": {
+        "W_min": 0.42,
+        "W_max": 1.26,
+        "L_min": 0.15,
+        "L_max": 0.35
+      },
+      "MN2": {
+        "W_min": 0.42,
+        "W_max": 1.26,
+        "L_min": 0.15,
+        "L_max": 0.35
+      },
+      "MN3": {
+        "W_min": 0.42,
+        "W_max": 1.26,
+        "L_min": 0.15,
+        "L_max": 0.35
+      },
+      "MN4": {
+        "W_min": 0.42,
+        "W_max": 1.26,
+        "L_min": 0.15,
+        "L_max": 0.35
+      }
+    }
+  }
+}

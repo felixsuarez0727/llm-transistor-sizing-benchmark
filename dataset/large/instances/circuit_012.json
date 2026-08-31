@@ -1,0 +1,128 @@
+{
+  "id": "circuit_012",
+  "name": "CMFB_AMP",
+  "description": "Common-mode feedback amplifier: diff sense pair + PMOS mirror",
+  "grid": {
+    "rows": 3,
+    "cols": 4
+  },
+  "transistors": [
+    {
+      "id": "MS1",
+      "type": "nmos",
+      "role": "diff_pair_nmos",
+      "nets": {
+        "gate": "OUTP",
+        "drain": "X1",
+        "source": "TAIL",
+        "bulk": "GND"
+      }
+    },
+    {
+      "id": "MS2",
+      "type": "nmos",
+      "role": "diff_pair_nmos",
+      "nets": {
+        "gate": "OUTN",
+        "drain": "X1",
+        "source": "TAIL",
+        "bulk": "GND"
+      }
+    },
+    {
+      "id": "MS3",
+      "type": "nmos",
+      "role": "diff_pair_nmos",
+      "nets": {
+        "gate": "VCMREF",
+        "drain": "X2",
+        "source": "TAIL",
+        "bulk": "GND"
+      }
+    },
+    {
+      "id": "MB",
+      "type": "nmos",
+      "role": "tail_nmos",
+      "nets": {
+        "gate": "VBN",
+        "drain": "TAIL",
+        "source": "GND",
+        "bulk": "GND"
+      }
+    },
+    {
+      "id": "ML1",
+      "type": "pmos",
+      "role": "load_pmos",
+      "nets": {
+        "gate": "X1",
+        "drain": "X1",
+        "source": "VDD",
+        "bulk": "VDD"
+      }
+    },
+    {
+      "id": "ML2",
+      "type": "pmos",
+      "role": "load_pmos",
+      "nets": {
+        "gate": "X1",
+        "drain": "VCMFB",
+        "source": "VDD",
+        "bulk": "VDD"
+      }
+    }
+  ],
+  "sizing_constraints": {
+    "match_groups": [
+      [
+        "MS1",
+        "MS2",
+        "MS3"
+      ],
+      [
+        "ML1",
+        "ML2"
+      ]
+    ],
+    "bounds": {
+      "MS1": {
+        "W_min": 1.26,
+        "W_max": 2.1,
+        "L_min": 0.35,
+        "L_max": 1.0
+      },
+      "MS2": {
+        "W_min": 1.26,
+        "W_max": 2.1,
+        "L_min": 0.35,
+        "L_max": 1.0
+      },
+      "MS3": {
+        "W_min": 1.26,
+        "W_max": 2.1,
+        "L_min": 0.35,
+        "L_max": 1.0
+      },
+      "MB": {
+        "W_min": 2.1,
+        "W_max": 4.2,
+        "L_min": 0.35,
+        "L_max": 1.0
+      },
+      "ML1": {
+        "W_min": 0.84,
+        "W_max": 2.1,
+        "L_min": 0.35,
+        "L_max": 1.0
+      },
+      "ML2": {
+        "W_min": 0.84,
+        "W_max": 2.1,
+        "L_min": 0.35,
+        "L_max": 1.0
+      }
+    }
+  }
+}

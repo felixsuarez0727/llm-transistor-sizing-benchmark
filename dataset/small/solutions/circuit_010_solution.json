@@ -1,0 +1,38 @@
+{
+  "id": "circuit_010",
+  "placement": {
+    "MP": [
+      1,
+      2
+    ],
+    "MNP": [
+      0,
+      2
+    ],
+    "MNN": [
+      0,
+      1
+    ]
+  },
+  "sizing": {
+    "MP": {
+      "W": 1.68,
+      "L": 0.18
+    },
+    "MNP": {
+      "W": 0.84,
+      "L": 0.18
+    },
+    "MNN": {
+      "W": 0.84,
+      "L": 0.18
+    }
+  },
+  "metrics": {
+    "hpwl": 5.0,
+    "hpwl_normalized": 1.6666666666666667,
+    "sizing_violations": 0,
+    "matching_violations": 0,
+    "cost": 1.6666666666666667
+  }
+}

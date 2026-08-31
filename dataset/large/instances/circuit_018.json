@@ -1,0 +1,131 @@
+{
+  "id": "circuit_018",
+  "name": "LOAD_MIRROR_FULL",
+  "description": "Full load mirror with cascode: 4 PMOS devices for gain/swing",
+  "grid": {
+    "rows": 3,
+    "cols": 4
+  },
+  "transistors": [
+    {
+      "id": "MPR1",
+      "type": "pmos",
+      "role": "mirror_pmos",
+      "nets": {
+        "gate": "VBP1",
+        "drain": "VBP1",
+        "source": "VDD",
+        "bulk": "VDD"
+      }
+    },
+    {
+      "id": "MPR2",
+      "type": "pmos",
+      "role": "bias_pmos",
+      "nets": {
+        "gate": "VBP2",
+        "drain": "VBP1",
+        "source": "Y1",
+        "bulk": "VDD"
+      }
+    },
+    {
+      "id": "MPO1",
+      "type": "pmos",
+      "role": "mirror_pmos",
+      "nets": {
+        "gate": "VBP1",
+        "drain": "X1",
+        "source": "VDD",
+        "bulk": "VDD"
+      }
+    },
+    {
+      "id": "MPO2",
+      "type": "pmos",
+      "role": "bias_pmos",
+      "nets": {
+        "gate": "VBP2",
+        "drain": "OUT",
+        "source": "X1",
+        "bulk": "VDD"
+      }
+    },
+    {
+      "id": "MNL",
+      "type": "nmos",
+      "role": "load_nmos",
+      "nets": {
+        "gate": "VBN",
+        "drain": "OUT",
+        "source": "GND",
+        "bulk": "GND"
+      }
+    },
+    {
+      "id": "MNR",
+      "type": "nmos",
+      "role": "load_nmos",
+      "nets": {
+        "gate": "VBN",
+        "drain": "Y1",
+        "source": "GND",
+        "bulk": "GND"
+      }
+    }
+  ],
+  "sizing_constraints": {
+    "match_groups": [
+      [
+        "MPR1",
+        "MPO1"
+      ],
+      [
+        "MPR2",
+        "MPO2"
+      ],
+      [
+        "MNL",
+        "MNR"
+      ]
+    ],
+    "bounds": {
+      "MPR1": {
+        "W_min": 0.84,
+        "W_max": 4.2,
+        "L_min": 0.35,
+        "L_max": 1.0
+      },
+      "MPR2": {
+        "W_min": 0.84,
+        "W_max": 2.1,
+        "L_min": 0.35,
+        "L_max": 1.0
+      },
+      "MPO1": {
+        "W_min": 0.84,
+        "W_max": 4.2,
+        "L_min": 0.35,
+        "L_max": 1.0
+      },
+      "MPO2": {
+        "W_min": 0.84,
+        "W_max": 2.1,
+        "L_min": 0.35,
+        "L_max": 1.0
+      },
+      "MNL": {
+        "W_min": 0.84,
+        "W_max": 2.1,
+        "L_min": 0.35,
+        "L_max": 1.0
+      },
+      "MNR": {
+        "W_min": 0.84,
+        "W_max": 2.1,
+        "L_min": 0.35,
+        "L_max": 1.0
+      }
+    }
+  }
+}

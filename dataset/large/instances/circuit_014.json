@@ -1,0 +1,127 @@
+{
+  "id": "circuit_014",
+  "name": "LDO_CORE",
+  "description": "LDO regulator core: error amp (diff pair) + pass device",
+  "grid": {
+    "rows": 3,
+    "cols": 4
+  },
+  "transistors": [
+    {
+      "id": "M1",
+      "type": "pmos",
+      "role": "diff_pair_pmos",
+      "nets": {
+        "gate": "VREF",
+        "drain": "X1",
+        "source": "TAIL",
+        "bulk": "VDD"
+      }
+    },
+    {
+      "id": "M2",
+      "type": "pmos",
+      "role": "diff_pair_pmos",
+      "nets": {
+        "gate": "VFB",
+        "drain": "X2",
+        "source": "TAIL",
+        "bulk": "VDD"
+      }
+    },
+    {
+      "id": "MTAIL",
+      "type": "pmos",
+      "role": "tail_pmos",
+      "nets": {
+        "gate": "VBP",
+        "drain": "TAIL",
+        "source": "VDD",
+        "bulk": "VDD"
+      }
+    },
+    {
+      "id": "ML1",
+      "type": "nmos",
+      "role": "load_nmos",
+      "nets": {
+        "gate": "VBN",
+        "drain": "X1",
+        "source": "GND",
+        "bulk": "GND"
+      }
+    },
+    {
+      "id": "ML2",
+      "type": "nmos",
+      "role": "load_nmos",
+      "nets": {
+        "gate": "VBN",
+        "drain": "X2",
+        "source": "GND",
+        "bulk": "GND"
+      }
+    },
+    {
+      "id": "MPASS",
+      "type": "pmos",
+      "role": "output_pmos",
+      "nets": {
+        "gate": "X2",
+        "drain": "VOUT",
+        "source": "VDD",
+        "bulk": "VDD"
+      }
+    }
+  ],
+  "sizing_constraints": {
+    "match_groups": [
+      [
+        "M1",
+        "M2"
+      ],
+      [
+        "ML1",
+        "ML2"
+      ]
+    ],
+    "bounds": {
+      "M1": {
+        "W_min": 1.26,
+        "W_max": 4.2,
+        "L_min": 0.35,
+        "L_max": 1.0
+      },
+      "M2": {
+        "W_min": 1.26,
+        "W_max": 4.2,
+        "L_min": 0.35,
+        "L_max": 1.0
+      },
+      "MTAIL": {
+        "W_min": 2.1,
+        "W_max": 4.2,
+        "L_min": 0.35,
+        "L_max": 1.0
+      },
+      "ML1": {
+        "W_min": 0.84,
+        "W_max": 2.1,
+        "L_min": 0.35,
+        "L_max": 1.0
+      },
+      "ML2": {
+        "W_min": 0.84,
+        "W_max": 2.1,
+        "L_min": 0.35,
+        "L_max": 1.0
+      },
+      "MPASS": {
+        "W_min": 4.2,
+        "W_max": 4.2,
+        "L_min": 0.15,
+        "L_max": 0.35
+      }
+    }
+  }
+}

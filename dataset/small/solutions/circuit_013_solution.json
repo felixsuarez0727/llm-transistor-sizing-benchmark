@@ -1,0 +1,46 @@
+{
+  "id": "circuit_013",
+  "placement": {
+    "MN1": [
+      1,
+      1
+    ],
+    "MN2": [
+      0,
+      1
+    ],
+    "MP1": [
+      1,
+      0
+    ],
+    "MP2": [
+      0,
+      0
+    ]
+  },
+  "sizing": {
+    "MN1": {
+      "W": 2.1,
+      "L": 0.5
+    },
+    "MN2": {
+      "W": 2.1,
+      "L": 0.5
+    },
+    "MP1": {
+      "W": 2.1,
+      "L": 0.5
+    },
+    "MP2": {
+      "W": 2.1,
+      "L": 0.5
+    }
+  },
+  "metrics": {
+    "hpwl": 6.0,
+    "hpwl_normalized": 2.0,
+    "sizing_violations": 0,
+    "matching_violations": 0,
+    "cost": 2.0
+  }
+}

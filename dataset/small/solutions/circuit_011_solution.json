@@ -1,0 +1,30 @@
+{
+  "id": "circuit_011",
+  "placement": {
+    "MN": [
+      0,
+      1
+    ],
+    "MP": [
+      0,
+      0
+    ]
+  },
+  "sizing": {
+    "MN": {
+      "W": 1.26,
+      "L": 0.15
+    },
+    "MP": {
+      "W": 1.26,
+      "L": 0.15
+    }
+  },
+  "metrics": {
+    "hpwl": 2.0,
+    "hpwl_normalized": 0.6666666666666666,
+    "sizing_violations": 0,
+    "matching_violations": 0,
+    "cost": 0.6666666666666666
+  }
+}

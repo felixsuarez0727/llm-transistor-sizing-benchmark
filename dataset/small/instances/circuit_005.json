@@ -1,0 +1,72 @@
+{
+  "id": "circuit_005",
+  "name": "DIFFPAIR",
+  "description": "Differential pair with tail: M1, M2 matched + tail NMOS",
+  "grid": {
+    "rows": 2,
+    "cols": 3
+  },
+  "transistors": [
+    {
+      "id": "M1",
+      "type": "nmos",
+      "role": "diff_pair_nmos",
+      "nets": {
+        "gate": "INP",
+        "drain": "OUTP",
+        "source": "TAIL",
+        "bulk": "GND"
+      }
+    },
+    {
+      "id": "M2",
+      "type": "nmos",
+      "role": "diff_pair_nmos",
+      "nets": {
+        "gate": "INN",
+        "drain": "OUTN",
+        "source": "TAIL",
+        "bulk": "GND"
+      }
+    },
+    {
+      "id": "MTAIL",
+      "type": "nmos",
+      "role": "tail_nmos",
+      "nets": {
+        "gate": "VBIAS",
+        "drain": "TAIL",
+        "source": "GND",
+        "bulk": "GND"
+      }
+    }
+  ],
+  "sizing_constraints": {
+    "match_groups": [
+      [
+        "M1",
+        "M2"
+      ]
+    ],
+    "bounds": {
+      "M1": {
+        "W_min": 1.26,
+        "W_max": 4.2,
+        "L_min": 0.35,
+        "L_max": 1.0
+      },
+      "M2": {
+        "W_min": 1.26,
+        "W_max": 4.2,
+        "L_min": 0.35,
+        "L_max": 1.0
+      },
+      "MTAIL": {
+        "W_min": 2.1,
+        "W_max": 4.2,
+        "L_min": 0.35,
+        "L_max": 1.0
+      }
+    }
+  }
+}
