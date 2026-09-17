@@ -1,6 +1,6 @@
 # LLM Transistor Sizing
 
-**IMSE-CNM (CSIC / Universidad de Sevilla)**  
+**IMSE-CNM (CSIC)**<br>
 Félix D. Suárez Bonilla · Jose M. de la Rosa · G. Liñán-Cembrano
 
 ---
@@ -195,5 +195,3 @@ All at temperature=0 for reproducibility.
 This work was supported by:
 - European Union NextGenerationEU / Red.es
 - PID2022-138078OB-I00 (MICIU/AEI)
-- PDC2023-145808-I00
-- USECHIP (TSI-069100-2023-001)
